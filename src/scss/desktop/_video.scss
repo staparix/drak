@@ -2,10 +2,18 @@
   height: 500px;
   @include bgc("/video/bg_video.jpg");
   text-align: center;
+  .video_player {
+    width: 50%;
+    height: 73%;
+    position: relative;
+    top: 20%;
+    margin: 0 auto;
+  }
   .drako-video__title {
     height: 45px;
     width: 50%;
-    display: inline-block;
+    position: absolute;
+    left: 25%;
     margin-top: 30px;
   }
 
@@ -18,6 +26,18 @@
     .drako-video__title {
       @include bgc('/rus/video/video_text.png', false);
       background-size: contain;
+    }
+  }
+
+  @media (max-width: 900px) {
+    & {
+      height: 300px;
+    }
+    .video_player {
+      width: auto;
+      height: auto;
+      position: relative;
+      top: 20%;
     }
   }
 }

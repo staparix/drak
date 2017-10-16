@@ -3,7 +3,7 @@
   .title {
     @include bgc("/novelties/title1.png");
     background-position: center;
-    height: 50px;
+    height: 10%;
     background-size: contain;
     position: absolute;
     width: 65%;
@@ -14,16 +14,16 @@
   .title-new {
     @include bgc("/novelties/new.png");
     background-position: center;
-    height: 60px;
-    width: 25%;
+    height: 10%;
+    width: 30%;
     background-size: contain;
     position: absolute;
-    top: 10%;
-    left: calc(50% - 25% / 2);
+    top: 11%;
+    left: calc(50% - 30% / 2);
   }
   .title-sub {
     @include bgc("/novelties/product_title.png");
-    height: 5%;
+    height: 10%;
     width: 75%;
     background-size: contain;
     position: absolute;
@@ -47,12 +47,14 @@
     & > div {
       height: 34%;
       width: 33%;
+      position: relative;
     }
   }
 
   .left {
     @include bgc("/novelties/splash_left.png");
     background-size: contain;
+    top: -10%;
   }
   .middle {
     @include bgc("/novelties/splash_middle.png");
@@ -61,6 +63,7 @@
   .right {
     @include bgc("/novelties/splash_right.png");
     background-size: contain;
+    top: -10%;
   }
 
   .rus & {
@@ -112,13 +115,23 @@
 
 .novelties {
   @media (max-width: 900px) {
+    .title {
+      width: 80%;
+      left: calc(50% - 85% / 2);
+    }
+    .contains {
+      & > div {
+        height: 50%;
+        width: 40%;
+      }
+    }
     .title-sub {
-      top: 25%;
+      top: 23%;
     }
 
     .rus & {
       .title-sub {
-        top: 25%;
+        top: 23%;
       }
     }
   }

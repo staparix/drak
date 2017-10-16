@@ -15,3 +15,20 @@ body {
 body {
   background-color: #fff;
 }
+
+.rus {
+  .rus-video {
+    display: block;
+  }
+
+  .lv-video {
+    display: none;
+  }
+}
+
+.lv-video {
+  display: block;
+}
+.rus-video {
+  display: none;
+}
