@@ -2,21 +2,20 @@ $base-img-url: '/more-drako';
 $base-img-url-rus: '/rus/more-drako';
 
 .more-drako {
-  height: 800px;
   background-color: #fff;
-  .more-drako-title-wrap {
-    padding-top: 30px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  img {
+    width: 80%;
+    margin: 7% auto;
   }
   .more-drako-title {
     @include bgc('#{$base-img-url}/more-drako-title.png', false);
     background-size: contain;
-    height: 60px;
+    height: 10%;
+    max-width: 650px;
     position: absolute;
-    width: 50%;
-    left: 25%;
+    width: 36%;
+    top: -6%;
+    left: calc(50% - 36%/2);
   }
   .apple {
     top: 0;

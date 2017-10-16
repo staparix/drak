@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/desktop-640min.css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:700,400" rel="stylesheet">
-    <title>Drako</title>
+    <title>Drako.lv</title>
     <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
     <script src="/js/drako_results_html.js?1507646425889"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43394083-14"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-43394083-14');
+    </script>
+
     <script>
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
         function init() {
@@ -84,13 +94,14 @@
 <body onload="init();">
 
 <section id="game" class="play">
-    <img class="img-responsive" src="/img/bg_nodrako.jpg" alt="">
-    <div id="animation_container" style=" width:50%; height:65%;position: absolute; bottom: 10px;">
-        <canvas id="canvas" style="position: absolute; display: block; width: 50%; height: 65%;" width="872" height="1300"></canvas>
-        <div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:50%; height:65%; position: absolute; left: 0px; top: 0px; display: block;">
+    <div class="log"></div>
+    <!--<img class="img-responsive" src="/img/bg.jpg" alt="drako start">-->
+    <div id="animation_container" style="width: 171px; height: 254.931px; position: absolute; bottom: 10px;">
+        <canvas id="canvas" style="position: absolute; display: block; width: 171px; height: 254.931px;" width="171" height="254"></canvas>
+        <div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 171px; height: 254.931px; position: absolute; left: 0px; top: 0px; display: block;">
         </div>
     </div>
-    <nav class="main-nav">
+    <nav id="menuBar" class="main-nav">
         <ul class="nav">
             <li class="nav-item"><a class="game" href="/"></a></li>
             <li class="nav-item"><a data-scroll class="product" href="#product"></a></li>
@@ -121,17 +132,18 @@
 </section>
 
 <section id="product" class="more-drako">
-    <div class="more-drako-title-wrap">
-        <div class="more-drako-title"></div>
+    <img class="img-responsive lv-video" src="/img/novelties/all_products.jpg" alt="all products">
+    <img class="img-responsive rus-video" src="/img/novelties/all_products_ru.jpg" alt="all products">
+    <div class="more-drako-title"></div>
     </div>
-    <div class="packs">
-        <div class="pack big-pack"></div>
-        <div class="pack apple"></div>
-        <div class="pack strawberry"></div>
-        <div class="pack cherry"></div>
-        <div class="pack various"></div>
-        <div class="pack vanilla"></div>
-    </div>
+    <!--<div class="packs">-->
+        <!--<div class="pack big-pack"></div>-->
+        <!--<div class="pack apple"></div>-->
+        <!--<div class="pack strawberry"></div>-->
+        <!--<div class="pack cherry"></div>-->
+        <!--<div class="pack various"></div>-->
+        <!--<div class="pack vanilla"></div>-->
+    <!--</div>-->
 </section>
 
 <section id="video" class="drako-video">
@@ -144,10 +156,10 @@
     <img class="img-responsive" src="/img/follow/bg_follow.jpg" alt="drako search">
     <div class="social">
         <div class="soc_icons">
-            <a target="_blank" href="https://www.instagram.com/laimasaldumi/">
+            <a target="_blank" href="https://www.facebook.com/LaimaSaldumi/">
                 <div class="fb"></div>
             </a>
-            <a href="https://www.facebook.com/LaimaSaldumi/">
+            <a target="_blank" href="https://www.instagram.com/laimasaldumi/">
                 <div class="insta"></div>
             </a>
         </div>
@@ -156,7 +168,7 @@
 
 </footer>
 
-<script src="js/lang-script.js"></script>
+<script src="js/drako.js"></script>
 <script src="js/smooth-scroll.polyfills.min.js"></script>
 <script src="js/smooth-scroll.min.js"></script>
 <script>

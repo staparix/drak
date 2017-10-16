@@ -1,5 +1,7 @@
 .novelties {
-
+  img {
+    width: 100%;
+  }
   .title {
     @include bgc("/novelties/title1.png");
     background-position: center;

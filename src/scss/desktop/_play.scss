@@ -1,9 +1,19 @@
+#animation_container {
+  left: 10%;
+}
+
 .play {
-  #animation_container {
-
-  }
-  .drako {
-
+  @include bgc('/bg.jpg');
+  height: 100vh;
+  .log {
+    @include bgc("/drako_logo.png");
+    height: 15%;
+    width: 50%;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    max-width: 335px;
+    left: 7%;
   }
 
   .play_btn {
@@ -52,6 +62,20 @@
     position: absolute;
     top: 36%;
     left: 44%;
+  }
+
+  @media (max-width: 1000px) {
+    .play_title {
+      left: 50%;
+      width: 47%;
+      top: 60%;
+      height: 15%;
+    }
+    .play_btn {
+      top: 63%;
+      left: 50%;
+      width: 45%;
+    }
   }
 
   @media (min-width: 1200px) {

@@ -38,3 +38,13 @@ lang.onclick = function langChange(event) {
 
     }
 };
+
+var menuBarClassList = document.getElementById('menuBar').classList;
+window.onscroll = function() {
+    var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
+   if(scrollBarPosition === 0) {
+       menuBarClassList.remove('menu-highlight')
+   } else {
+       menuBarClassList.add('menu-highlight')
+   }
+};
