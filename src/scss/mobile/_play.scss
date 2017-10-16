@@ -1,0 +1,40 @@
+.play {
+  height: 234px;
+  width: 400px;
+  @include bgc("/bg_start.jpg");
+  //background-position: -108px 0;
+  background-size: contain;
+  .play_btn {
+    @include bgc("/play_btn.png");
+    background-size: contain;
+    height: 100px;
+  }
+
+  &_title {
+    @include bgc("/start_title.png");
+    background-size: contain;
+    height: 50px;
+    width: 340px;
+  }
+
+  .rus & {
+    .play_title {
+      @include bgc("/start_title_RUS.png");
+      background-size: contain;
+      height: 76px;
+      width: 360px;
+    }
+
+    .play_btn {
+      @include bgc("/play_btn_RUS.png");
+      background-size: contain;
+      height: 100px;
+    }
+  }
+
+  &_block {
+    position: absolute;
+    top: 28%;
+    left: 12%;
+  }
+}

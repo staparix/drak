@@ -1,0 +1,50 @@
+.play {
+
+  .play_btn {
+    @include bgc("/play_btn.png");
+    background-size: contain;
+    top: 50%;
+    left: 40%;
+    width: 43%;
+    height: 30%;
+    position: absolute;
+  }
+
+  .rus & {
+    .play_title {
+      @include bgc("/start_title_RUS.png");
+      background-size: contain;
+      height: 20%;
+      width: 44%;
+      position: absolute;
+      top: 30%;
+      left: 43%;
+    }
+
+    .play_btn {
+      @include bgc("/play_btn_RUS.png");
+      background-size: contain;
+      top: 50%;
+      left: 40%;
+      width: 43%;
+      height: 30%;
+      position: absolute;
+    }
+  }
+
+  &_title {
+    @include bgc("/start_title.png");
+    background-size: contain;
+    height: 20%;
+    width: 44%;
+    position: absolute;
+    top: 30%;
+    left: 43%;
+  }
+
+  &_block {
+    position: absolute;
+    top: 36%;
+    left: 44%;
+  }
+}

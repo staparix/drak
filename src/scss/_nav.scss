@@ -1,0 +1,96 @@
+.main-nav {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 10%;
+}
+
+.nav {
+  list-style: none;
+  text-align: center;
+  padding: 0 25px;
+  .nav-item {
+    background-color: #fff;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 24px;
+    display: inline-block;
+    font-weight: 700;
+    padding: 0 21px;
+
+  }
+
+  @media (max-width: 900px) {
+    & {
+      padding: 0 0;
+    }
+    .nav-item {
+      background-color: #fff;
+      border-radius: 20px;
+      text-transform: uppercase;
+      font-size: 12px;
+      display: inline-block;
+      font-weight: 700;
+      padding: 0 5px;
+    }
+
+  }
+  a {
+    color: #1ba0cb;
+  }
+  a.game {
+    &:after {
+      content: 'SPĒLE';
+    }
+  }
+  a.product {
+    &:after {
+      content: 'PRODUKTI';
+    }
+  }
+  a.video {
+    &:after {
+      content: 'VIDEO';
+    }
+  }
+
+  .rus & {
+    a.game {
+      &:after {
+        content: 'ИГРА';
+      }
+    }
+    a.product {
+      &:after {
+        content: 'ПРОДУКТЫ';
+      }
+    }
+    a.video {
+      &:after {
+        content: 'ВИДЕО';
+      }
+    }
+  }
+
+}
+
+.lang-switch {
+  list-style: none;
+  font-size: 0;
+  .lang-switch-item {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 16px;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+    &:first-child {
+      border-right: 1px solid #fff;
+    }
+  }
+}

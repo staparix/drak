@@ -1,0 +1,47 @@
+.follow-drako {
+
+  height: 500px;
+  position: relative;
+  .fb, .insta {
+    width: 100px;
+    height: 100px;
+  }
+
+  .social {
+    position: absolute;
+    top: 205px;
+    left: 50%;
+  }
+
+
+  .soc_icons {
+    display: flex;
+  }
+
+  .rus & {
+    .title {
+      @include bgc("/rus/follow/follow_text.png");
+      margin-top: 20px;
+      width: 400px;
+      height: 100px;
+    }
+  }
+
+  .fb {
+    @include bgc("/follow/fb_icon.png");
+    margin-right: 30px;
+    margin-left: 30px;
+
+  }
+
+  .insta {
+    @include bgc("/follow/insta_icon.png");
+  }
+
+  .title {
+    @include bgc("/follow/follow_text.png");
+    margin-top: 20px;
+    width: 335px;
+    height: 100px;
+  }
+}

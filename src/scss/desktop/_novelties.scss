@@ -1,0 +1,126 @@
+.novelties {
+
+  .title {
+    @include bgc("/novelties/title1.png");
+    background-position: center;
+    height: 50px;
+    background-size: contain;
+    position: absolute;
+    width: 65%;
+    left: calc(50% - 65% / 2);
+    right: 85px;
+    top: 3%;
+  }
+  .title-new {
+    @include bgc("/novelties/new.png");
+    background-position: center;
+    height: 60px;
+    width: 25%;
+    background-size: contain;
+    position: absolute;
+    top: 10%;
+    left: calc(50% - 25% / 2);
+  }
+  .title-sub {
+    @include bgc("/novelties/product_title.png");
+    height: 5%;
+    width: 75%;
+    background-size: contain;
+    position: absolute;
+    top: 20%;
+    left: calc(50% - 75% / 2);
+  }
+
+  .contains-wrap {
+    position: absolute;
+    bottom: 0;
+
+  }
+
+  .contains {
+    display: flex;
+    position: absolute;
+    width: 76%;
+    height: 30%;
+    top: 70%;
+    left: calc(50% - 76% / 2);
+    & > div {
+      height: 34%;
+      width: 33%;
+    }
+  }
+
+  .left {
+    @include bgc("/novelties/splash_left.png");
+    background-size: contain;
+  }
+  .middle {
+    @include bgc("/novelties/splash_middle.png");
+    background-size: contain;
+  }
+  .right {
+    @include bgc("/novelties/splash_right.png");
+    background-size: contain;
+  }
+
+  .rus & {
+    .title {
+      @include bgc("/rus/novelties/title1.png");
+      background-position: center;
+      height: 50px;
+      background-size: contain;
+      position: absolute;
+      width: 65%;
+      left: calc(50% - 65% / 2);
+      right: 85px;
+      top: 3%;
+    }
+    .title-new {
+      @include bgc("/rus/novelties/new.png");
+      background-position: center;
+      height: 60px;
+      width: 25%;
+      background-size: contain;
+      position: absolute;
+      top: 10%;
+      left: calc(50% - 25% / 2);
+    }
+    .title-sub {
+      @include bgc("/rus/novelties/product_title.png");
+      height: 5%;
+      width: 75%;
+      background-size: contain;
+      position: absolute;
+      top: 20%;
+      left: calc(50% - 75% / 2);
+    }
+
+    .left {
+      @include bgc("/rus/novelties/splash_left.png");
+      background-size: contain;
+    }
+    .middle {
+      @include bgc("/rus/novelties/splash_middle.png");
+      background-size: contain;
+    }
+    .right {
+      @include bgc("/rus/novelties/splash_right.png");
+      background-size: contain;
+    }
+  }
+}
+
+.novelties {
+  @media (max-width: 900px) {
+    .title-sub {
+      top: 25%;
+    }
+
+    .rus & {
+      .title-sub {
+        top: 25%;
+      }
+    }
+  }
+}
+

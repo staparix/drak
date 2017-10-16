@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/desktop-640min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:700,400" rel="stylesheet">
+    <title>Drako!</title>
+</head>
+<body>
+
+<section id="game" class="play">
+    <img class="img-responsive" src="/img/bg_start.jpg" alt="">
+    <nav class="main-nav">
+        <ul class="nav">
+            <li class="nav-item"><a class="game" href="/"></a></li>
+            <li class="nav-item"><a data-scroll class="product" href="#product"></a></li>
+            <li class="nav-item"><a data-scroll class="video" href="#video"></a></li>
+        </ul>
+        <ul data-lang-component class="lang-switch">
+            <li data-lang="LAT" class="lang-switch-item"><a href="">LAT</a></li>
+            <li data-lang="RUS" class="lang-switch-item"><a href="">RUS</a></li>
+        </ul>
+    </nav>
+    <div class="play_title">
+    </div>
+    <div class="play_btn">
+    </div>
+
+</section>
+
+<section class="novelties">
+    <img class="img-responsive" src="/img/novelties/bg_novelties.jpg" alt="">
+    <div class="title"></div>
+    <div class="title-new"></div>
+    <div class="title-sub"></div>
+    <div class="contains">
+        <div class="left"></div>
+        <div class="middle"></div>
+        <div class="right"></div>
+    </div>
+</section>
+
+<section id="product" class="more-drako">
+    <div class="more-drako-title-wrap">
+        <div class="more-drako-title"></div>
+    </div>
+    <div class="packs">
+        <div class="pack big-pack"></div>
+        <div class="pack apple"></div>
+        <div class="pack strawberry"></div>
+        <div class="pack cherry"></div>
+        <div class="pack various"></div>
+        <div class="pack vanilla"></div>
+    </div>
+</section>
+
+<section id="video" class="drako-video">
+<div class="drako-video__title"></div>
+</section>
+
+<footer class="follow-drako">
+    <img class="img-responsive" src="/img/follow/bg_follow.jpg" alt="drako search">
+<div class="social">
+<div class="soc_icons">
+<a href="http://google.com">
+<div class="fb"></div>
+</a>
+<a href="">
+<div class="insta"></div>
+</a>
+</div>
+<div class="title"></div>
+</div>
+
+</footer>
+
+<script src="js/lang-script.js"></script>
+<script src="js/smooth-scroll.polyfills.min.js"></script>
+<script src="js/smooth-scroll.min.js"></script>
+<script>
+    var scroll = new SmoothScroll('a[href*="#"]');
+</script>
+</body>
+</html>

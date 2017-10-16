@@ -1,0 +1,17 @@
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin bgc($img,$center:true) {
+  background: url('#{$path-to-images}#{$img}') no-repeat;
+  background-size: cover;
+  @if ($center) {
+    background-position: center;
+  }
+}
+
+@mixin bgcTranslate($img) {
+
+}

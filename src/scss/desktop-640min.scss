@@ -1,0 +1,17 @@
+@import 'global';
+@import 'varibales';
+@import 'helpers';
+
+@import 'nav';
+@import 'desktop/play';
+@import 'desktop/follow-us';
+@import 'desktop/more_drako';
+@import 'desktop/novelties';
+@import 'desktop/video';
+
+body {
+  max-width: 1680px;
+}
+body {
+  background-color: #fff;
+}

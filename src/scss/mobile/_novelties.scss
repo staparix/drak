@@ -1,0 +1,66 @@
+.novelties {
+  .title {
+    @include bgc("/novelties/title1.png");
+    height: 60px;
+    background-size: contain;
+  }
+  .title-new {
+    @include bgc("/novelties/new.png");
+    height: 60px;
+    background-size: contain;
+    margin-top: 30px;
+  }
+  .title-sub {
+    @include bgc("/novelties/product_title.png");
+    height: 60px;
+    background-size: contain;
+    margin-top: 30px;
+  }
+
+  .contains-wrap {
+    position: absolute;
+    bottom: 0;
+    
+  }
+
+  .contains {
+    display: flex;
+    & > div {
+      height: 105px;
+      width: 200px;
+    }
+  }
+
+  .left {
+    @include bgc("/novelties/splash_left.png");
+    background-size: contain;
+  }
+  .middle {
+    @include bgc("/novelties/splash_middle.png");
+    background-size: contain;
+  }
+  .right {
+    @include bgc("/novelties/splash_right.png");
+    background-size: contain;
+  }
+
+  .rus & {
+    .title {
+      @include bgc("/rus/novelties/title1.png");
+      height: 60px;
+      background-size: contain;
+    }
+    .title-new {
+      @include bgc("/rus/novelties/new.png");
+      height: 60px;
+      background-size: contain;
+      margin-top: 30px;
+    }
+    .title-sub {
+      @include bgc("/rus/novelties/product_title.png");
+      height: 60px;
+      background-size: contain;
+      margin-top: 30px;
+    }
+  }
+}

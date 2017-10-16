@@ -1,0 +1,23 @@
+.drako-video {
+  height: 650px;
+  @include bgc("/video/bg_video.jpg");
+  text-align: center;
+  .drako-video__title {
+    height: 45px;
+    width: 500px;
+    display: inline-block;
+    margin-top: 30px;
+  }
+
+  .drako-video__title {
+    @include bgc('/video/video_text.png', false);
+    background-size: contain;
+  }
+
+  .rus & {
+    .drako-video__title {
+      @include bgc('/rus/video/video_text.png', false);
+      background-size: contain;
+    }
+  }
+}
