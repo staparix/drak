@@ -135,5 +135,27 @@
       }
     }
   }
+
+  @media (min-width: 1200px) {
+    .title {
+      height: 10%;
+      width: 50%;
+      left: 25%;
+      right: 85px;
+      top: 0;
+    }
+    .title-new {
+      height: 10%;
+      width: 30%;
+      top: 8%;
+      left: 35%;
+    }
+    .title-sub {
+      height: 10%;
+      width: 50%;
+      top: 17%;
+      left: 25%;
+    }
+  }
 }
 

@@ -27,6 +27,12 @@
     & {
       padding: 0 0;
     }
+
+    .rus & {
+      .nav-item {
+        font-size: 10px
+      }
+    }
     .nav-item {
       background-color: #fff;
       border-radius: 20px;
@@ -91,6 +97,17 @@
     }
     &:first-child {
       border-right: 1px solid #fff;
+    }
+  }
+  @media (max-width: 900px) {
+    .rus & {
+      .lang-switch-item {
+        padding: 4px 2px;
+      }
+
+    }
+    .lang-switch-item {
+      padding: 4px 2px;
     }
   }
 }

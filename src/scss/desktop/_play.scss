@@ -47,4 +47,35 @@
     top: 36%;
     left: 44%;
   }
+
+  @media (min-width: 1200px) {
+    //.rus & {
+    //  .play_title {
+    //    height: 12%;
+    //    width: 30%;
+    //    top: 30%;
+    //    left: 40%;
+    //  }
+    //
+    //  .play_btn {
+    //    top: 44%;
+    //    left: 40%;
+    //    width: 25%;
+    //    height: 20%;
+    //  }
+    //}
+    .play_btn {
+      top: 44%;
+      left: 40%;
+      width: 25%;
+      height: 20%;
+    }
+
+    .play_title {
+      height: 12%;
+      width: 30%;
+      top: 30%;
+      left: 40%;
+    }
+  }
 }

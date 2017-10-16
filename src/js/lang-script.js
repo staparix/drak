@@ -1,3 +1,13 @@
+(function(e){
+
+    e.matches || (e.matches=e.matchesSelector||function(selector){
+        var matches = document.querySelectorAll(selector), th = this;
+        return Array.prototype.some.call(matches, function(e){
+            return e === th;
+        });
+    });
+
+})(Element.prototype);
 
 (function (e) {
     e.closest = e.closest || function (css) {
@@ -13,9 +23,9 @@
 
 var lang = document.querySelector('[data-lang-component]');
 
-lang.onclick = function langChange(e) {
-    e.preventDefault();
-    var langObj = e.target.closest('[data-lang]').dataset;
+lang.onclick = function langChange(event) {
+    event.preventDefault ? event.preventDefault() : (event.returnValue = false);
+    var langObj = event.target.closest('[data-lang]').dataset;
     if (langObj.lang) {
         switch (langObj.lang) {
             case 'LAT':
