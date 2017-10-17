@@ -1,18 +1,73 @@
 .main-nav {
   margin-top: 26px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
   position: fixed;
-  padding: 5px;
   top: 0;
-  right: 10%;
+  padding: 5px;
   z-index: 2;
+  width: 100%;
+
+  .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
+    margin-right: 10%;
+  }
+
+  .nav-item {
+    width: 143px;
+    height: 59px;
+    display: inline-block;
+  }
+  .rus & {
+    .nav-item__game {
+      @include bgc('/rus/menu/game.png');
+      background-size: contain;
+    }
+    .nav-item__products {
+      @include bgc('/rus/menu/products.png');
+      background-size: contain;
+      width: 184px;
+    }
+    .nav-item__video {
+      @include bgc('/rus/menu/video.png');
+      background-size: contain;
+    }
+
+  }
+  .nav-item__game {
+    @include bgc('/menu/game.png');
+    background-size: contain;
+  }
+  .nav-item__products {
+    @include bgc('/menu/products.png');
+    background-size: contain;
+    width: 184px;
+  }
+  .nav-item__video {
+    @include bgc('/menu/video.png');
+    background-size: contain;
+  }
 
   &.menu-highlight {
-    background-color: #009966;
+    background-color: #FFCC33;
     margin-top: 0;
+
+    .menu-logo {
+      @include bgc("/drako_logo.png");
+      width: 170px;
+      height: 50px;
+      position: absolute;
+      left: 18%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &.menu-highlight {
+      .menu-logo {
+        left: 0;
+      }
+    }
   }
 }
 
@@ -20,75 +75,6 @@
   list-style: none;
   text-align: center;
   padding: 0 25px;
-  .nav-item {
-    background-color: #fff;
-    border-radius: 20px;
-    text-transform: uppercase;
-    font-size: 24px;
-    display: inline-block;
-    font-weight: 700;
-    padding: 0 21px;
-
-  }
-
-  @media (max-width: 900px) {
-    & {
-      padding: 0 0;
-    }
-
-    .rus & {
-      .nav-item {
-        //font-size: 40px;
-      }
-    }
-    .nav-item {
-      background-color: #fff;
-      border-radius: 20px;
-      text-transform: uppercase;
-      //font-size: 40px;
-      display: inline-block;
-
-      font-weight: 700;
-      padding: 0 5px;
-    }
-
-  }
-  a {
-    color: #1ba0cb;
-  }
-  a.game {
-    &:after {
-      content: 'SPĒLE';
-    }
-  }
-  a.product {
-    &:after {
-      content: 'PRODUKTI';
-    }
-  }
-  a.video {
-    &:after {
-      content: 'VIDEO';
-    }
-  }
-
-  .rus & {
-    a.game {
-      &:after {
-        content: 'ИГРА';
-      }
-    }
-    a.product {
-      &:after {
-        content: 'ПРОДУКТЫ';
-      }
-    }
-    a.video {
-      &:after {
-        content: 'ВИДЕО';
-      }
-    }
-  }
 
 }
 

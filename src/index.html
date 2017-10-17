@@ -113,7 +113,29 @@
     </script>
 </head>
 <body onload="init();">
-
+<nav id="menuBar" class="main-nav">
+    <div class="menu-logo"></div>
+    <div class="navigation">
+        <div class="nav">
+            <a class="lv-video" target="_blank" href="http://spele.drako.lv">
+                <div class="nav-item nav-item__game"></div>
+            </a>
+            <a class="rus-video" target="_blank" href="http://spele.drako.lv/ru">
+                <div class="nav-item nav-item__game"></div>
+            </a>
+            <a data-scroll class="product" href="#product">
+                <div class="nav-item nav-item__products"></div>
+            </a>
+            <a data-scroll class="video" href="#video">
+                <div class="nav-item nav-item__video"></div>
+            </a>
+        </div>
+        <ul data-lang-component class="lang-switch">
+            <li data-lang="LAT" class="lang-switch-item"><a href="">LAT</a></li>
+            <li data-lang="RUS" class="lang-switch-item"><a href="">RUS</a></li>
+        </ul>
+    </div>
+</nav>
 <section id="game" class="play">
     <div class="log"></div>
     <!--<img class="img-responsive" src="/img/bg.jpg" alt="drako start">-->
@@ -124,20 +146,7 @@
              style="pointer-events: none; overflow: hidden; width: 171px; height: 254.931px; position: absolute; left: 0px; top: 0px; display: block;">
         </div>
     </div>
-    <nav id="menuBar" class="main-nav">
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="lv-video game" target="_blank" href="http://spele.drako.lv"></a>
-                <a class="rus-video game" target="_blank" href="http://spele.drako.lv/ru"></a>
-            </li>
-            <li class="nav-item"><a data-scroll class="product" href="#product"></a></li>
-            <li class="nav-item"><a data-scroll class="video" href="#video"></a></li>
-        </ul>
-        <ul data-lang-component class="lang-switch">
-            <li data-lang="LAT" class="lang-switch-item"><a href="">LAT</a></li>
-            <li data-lang="RUS" class="lang-switch-item"><a href="">RUS</a></li>
-        </ul>
-    </nav>
+
     <div class="play_title">
     </div>
     <a class="lv-video" target="_blank" href="http://spele.drako.lv">
@@ -205,7 +214,9 @@
 <script src="js/smooth-scroll.polyfills.min.js"></script>
 <script src="js/smooth-scroll.min.js"></script>
 <script>
-    var scroll = new SmoothScroll('a[href*="#"]');
+    var scroll = new SmoothScroll('a[href*="#"]',{
+        offset:72
+    });
 </script>
 </body>
 </html>
