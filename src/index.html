@@ -11,7 +11,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-43394083-14"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-43394083-14');
@@ -19,73 +23,90 @@
 
     <script>
         var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+
         function init() {
             canvas = document.getElementById("canvas");
             anim_container = document.getElementById("animation_container");
             dom_overlay_container = document.getElementById("dom_overlay_container");
-            var comp=AdobeAn.getComposition("3A0007D8E8D01E44823A9F483F99BD51");
-            var lib=comp.getLibrary();
+            var comp = AdobeAn.getComposition("3A0007D8E8D01E44823A9F483F99BD51");
+            var lib = comp.getLibrary();
             var loader = new createjs.LoadQueue(false);
-            loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
-            loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
-            var lib=comp.getLibrary();
+            loader.addEventListener("fileload", function (evt) {
+                handleFileLoad(evt, comp)
+            });
+            loader.addEventListener("complete", function (evt) {
+                handleComplete(evt, comp)
+            });
+            var lib = comp.getLibrary();
             loader.loadManifest(lib.properties.manifest);
         }
+
         function handleFileLoad(evt, comp) {
-            var images=comp.getImages();
-            if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+            var images = comp.getImages();
+            if (evt && (evt.item.type == "image")) {
+                images[evt.item.id] = evt.result;
+            }
         }
-        function handleComplete(evt,comp) {
+
+        function handleComplete(evt, comp) {
             //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
-            var lib=comp.getLibrary();
-            var ss=comp.getSpriteSheet();
+            var lib = comp.getLibrary();
+            var ss = comp.getSpriteSheet();
             var queue = evt.target;
             var ssMetadata = lib.ssMetadata;
-            for(i=0; i<ssMetadata.length; i++) {
-                ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+            for (i = 0; i < ssMetadata.length; i++) {
+                ss[ssMetadata[i].name] = new createjs.SpriteSheet({
+                    "images": [queue.getResult(ssMetadata[i].name)],
+                    "frames": ssMetadata[i].frames
+                })
             }
             exportRoot = new lib.drako_results_html();
             stage = new lib.Stage(canvas);
             stage.addChild(exportRoot);
             //Registers the "tick" event listener.
-            fnStartAnimation = function() {
+            fnStartAnimation = function () {
                 createjs.Ticker.setFPS(lib.properties.fps);
                 createjs.Ticker.addEventListener("tick", stage);
             }
+
             //Code to support hidpi screens and responsive scaling.
             function makeResponsive(isResp, respDim, isScale, scaleType) {
-                var lastW, lastH, lastS=1;
+                var lastW, lastH, lastS = 1;
                 window.addEventListener('resize', resizeCanvas);
                 resizeCanvas();
+
                 function resizeCanvas() {
                     var w = lib.properties.width, h = lib.properties.height;
-                    var iw = window.innerWidth, ih=window.innerHeight;
-                    var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;
-                    if(isResp) {
-                        if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {
+                    var iw = window.innerWidth, ih = window.innerHeight;
+                    var pRatio = window.devicePixelRatio || 1, xRatio = iw / w, yRatio = ih / h, sRatio = 1;
+                    if (isResp) {
+                        if ((respDim == 'width' && lastW == iw) || (respDim == 'height' && lastH == ih)) {
                             sRatio = lastS;
                         }
-                        else if(!isScale) {
-                            if(iw<w || ih<h)
+                        else if (!isScale) {
+                            if (iw < w || ih < h)
                                 sRatio = Math.min(xRatio, yRatio);
                         }
-                        else if(scaleType==1) {
+                        else if (scaleType == 1) {
                             sRatio = Math.min(xRatio, yRatio);
                         }
-                        else if(scaleType==2) {
+                        else if (scaleType == 2) {
                             sRatio = Math.max(xRatio, yRatio);
                         }
                     }
-                    canvas.width = w*pRatio*sRatio;
-                    canvas.height = h*pRatio*sRatio;
-                    canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';
-                    canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
-                    stage.scaleX = pRatio*sRatio;
-                    stage.scaleY = pRatio*sRatio;
-                    lastW = iw; lastH = ih; lastS = sRatio;
+                    canvas.width = w * pRatio * sRatio;
+                    canvas.height = h * pRatio * sRatio;
+                    canvas.style.width = dom_overlay_container.style.width = anim_container.style.width = w * sRatio + 'px';
+                    canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h * sRatio + 'px';
+                    stage.scaleX = pRatio * sRatio;
+                    stage.scaleY = pRatio * sRatio;
+                    lastW = iw;
+                    lastH = ih;
+                    lastS = sRatio;
                 }
             }
-            makeResponsive(true,'both',false,1);
+
+            makeResponsive(true, 'both', false, 1);
             AdobeAn.compositionLoaded(lib.properties.id);
             fnStartAnimation();
         }
@@ -97,13 +118,18 @@
     <div class="log"></div>
     <!--<img class="img-responsive" src="/img/bg.jpg" alt="drako start">-->
     <div id="animation_container" style="width: 171px; height: 254.931px; position: absolute; bottom: 10px;">
-        <canvas id="canvas" style="position: absolute; display: block; width: 171px; height: 254.931px;" width="171" height="254"></canvas>
-        <div id="dom_overlay_container" style="pointer-events: none; overflow: hidden; width: 171px; height: 254.931px; position: absolute; left: 0px; top: 0px; display: block;">
+        <canvas id="canvas" style="position: absolute; display: block; width: 171px; height: 254.931px;" width="171"
+                height="254"></canvas>
+        <div id="dom_overlay_container"
+             style="pointer-events: none; overflow: hidden; width: 171px; height: 254.931px; position: absolute; left: 0px; top: 0px; display: block;">
         </div>
     </div>
     <nav id="menuBar" class="main-nav">
         <ul class="nav">
-            <li class="nav-item"><a class="game" href="/"></a></li>
+            <li class="nav-item">
+                <a class="lv-video game" target="_blank" href="http://spele.drako.lv"></a>
+                <a class="rus-video game" target="_blank" href="http://spele.drako.lv/ru"></a>
+            </li>
             <li class="nav-item"><a data-scroll class="product" href="#product"></a></li>
             <li class="nav-item"><a data-scroll class="video" href="#video"></a></li>
         </ul>
@@ -114,13 +140,17 @@
     </nav>
     <div class="play_title">
     </div>
-    <a href="http://37.139.10.78/">
+    <a class="lv-video" target="_blank" href="http://spele.drako.lv">
+        <div class="play_btn">
+        </div>
+    </a>
+    <a class="rus-video" target="_blank" href="http://spele.drako.lv/ru">
         <div class="play_btn">
         </div>
     </a>
 </section>
 
-<section class="novelties">
+<section class="novelties" id="product">
     <img class="img-responsive" src="/img/novelties/bg_novelties.jpg" alt="">
     <div class="title"></div>
     <div class="title-new"></div>
@@ -132,25 +162,27 @@
     </div>
 </section>
 
-<section id="product" class="more-drako">
+<section class="more-drako">
     <img class="img-responsive lv-video" src="/img/novelties/all_products.jpg" alt="all products">
     <img class="img-responsive rus-video" src="/img/novelties/all_products_ru.jpg" alt="all products">
     <div class="more-drako-title"></div>
     </div>
     <!--<div class="packs">-->
-        <!--<div class="pack big-pack"></div>-->
-        <!--<div class="pack apple"></div>-->
-        <!--<div class="pack strawberry"></div>-->
-        <!--<div class="pack cherry"></div>-->
-        <!--<div class="pack various"></div>-->
-        <!--<div class="pack vanilla"></div>-->
+    <!--<div class="pack big-pack"></div>-->
+    <!--<div class="pack apple"></div>-->
+    <!--<div class="pack strawberry"></div>-->
+    <!--<div class="pack cherry"></div>-->
+    <!--<div class="pack various"></div>-->
+    <!--<div class="pack vanilla"></div>-->
     <!--</div>-->
 </section>
 
 <section id="video" class="drako-video">
     <div class="drako-video__title"></div>
-    <iframe class="video_player lv-video" src="https://www.youtube.com/embed/4FWqevnBd4g" frameborder="0" allowfullscreen></iframe>
-    <iframe class="video_player rus-video" src="https://www.youtube.com/embed/xwGBZl41zpQ" frameborder="0" allowfullscreen></iframe>
+    <iframe class="video_player lv-video" src="https://www.youtube.com/embed/4FWqevnBd4g" frameborder="0"
+            allowfullscreen></iframe>
+    <iframe class="video_player rus-video" src="https://www.youtube.com/embed/xwGBZl41zpQ" frameborder="0"
+            allowfullscreen></iframe>
 </section>
 
 <footer class="follow-drako">
