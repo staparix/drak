@@ -1,8 +1,8 @@
-(function(e){
+(function (e) {
 
-    e.matches || (e.matches=e.matchesSelector||function(selector){
+    e.matches || (e.matches = e.matchesSelector || function (selector) {
         var matches = document.querySelectorAll(selector), th = this;
-        return Array.prototype.some.call(matches, function(e){
+        return Array.prototype.some.call(matches, function (e) {
             return e === th;
         });
     });
@@ -11,14 +11,14 @@
 
 (function (e) {
     e.closest = e.closest || function (css) {
-            var node = this;
+        var node = this;
 
-            while (node) {
-                if (node.matches(css)) return node;
-                else node = node.parentElement;
-            }
-            return null;
+        while (node) {
+            if (node.matches(css)) return node;
+            else node = node.parentElement;
         }
+        return null;
+    }
 })(Element.prototype);
 
 var lang = document.querySelector('[data-lang-component]');
@@ -40,11 +40,13 @@ lang.onclick = function langChange(event) {
 };
 
 var menuBarClassList = document.getElementById('menuBar').classList;
-window.onscroll = function() {
+window.onscroll = function () {
     var scrollBarPosition = window.pageYOffset | document.body.scrollTop;
-   if(scrollBarPosition === 0) {
-       menuBarClassList.remove('menu-highlight')
-   } else {
-       menuBarClassList.add('menu-highlight')
-   }
+    if (scrollBarPosition < 10) {
+        menuBarClassList.remove('menu-highlight')
+    } else {
+        if (scrollBarPosition > 10) {
+            menuBarClassList.add('menu-highlight')
+        }
+    }
 };
